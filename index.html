@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A fictional mechanical keyboard and desk accessories shop. Explore the collection and try a simulated checkout.">
+  <meta name="theme-color" content="#201626">
+  <title>Velvet Circuit Supply · Desk goods after dark</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="demo">Portfolio storefront · Fictional products, inventory and checkout</div>
+  <header class="shell header">
+    <a class="brand" href="./"><span aria-hidden="true">✦</span> Velvet Circuit <small>Supply</small></a>
+    <nav aria-label="Main"><a href="#shop">Shop</a><a href="#bundle">Bundles</a><a href="#help">Shipping &amp; returns</a></nav>
+    <button id="open-bag" class="outline bag" type="button" hidden>Bag <span id="bag-count">0</span></button>
+  </header>
+  <main id="main">
+    <section class="shell hero">
+      <div class="hero-copy"><p class="eyebrow">The After Hours collection</p><h1>Desk goods<br>after <em>dark.</em></h1><p>Mechanical keycaps, soft desk mats and coiled cables in dusk-toned colors. Give your setup a night mode of its own.</p><a class="button" href="#shop">Shop the collection <span aria-hidden="true">↗</span></a></div>
+      <img src="assets/hero.webp" alt="Plum and cream mechanical keyboard with a coiled cable on a dark desk mat" width="1200" height="800" fetchpriority="high">
+    </section>
+    <section class="shop" id="shop">
+      <div class="shell section">
+        <div class="section-head"><div><p class="eyebrow">After Hours</p><h2>Shop the drop.</h2></div><p>Find the right fit for your board, then put together a setup that feels like yours.</p></div>
+        <noscript><p>Enable JavaScript to browse the demo catalog and try checkout.</p></noscript>
+        <div class="filters" id="filters" hidden>
+          <label>Category<select id="category"><option value="">All goods</option><option value="Keycaps">Keycaps</option><option value="Desk mats">Desk mats</option><option value="Cables">Cables</option><option value="Bundles">Bundles</option></select></label>
+          <label>Fit<select id="fit"><option value="">All setups</option><option value="mx">Standard MX</option><option value="ansi">ANSI layout</option><option value="usb">USB-C keyboard</option><option value="desk">Any desk</option></select></label>
+          <label>Sort by<select id="sort"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name: A to Z</option></select></label>
+          <label class="checkbox"><input id="available" type="checkbox"> In stock only</label>
+        </div>
+        <p id="matches" class="matches" role="status"></p>
+        <div id="products" class="products"></div>
+      </div>
+    </section>
+    <section class="shell section bundle" id="bundle">
+      <img src="assets/hero.webp" alt="Coordinated purple keyboard accessories arranged together" width="1200" height="800" loading="lazy">
+      <div><p class="eyebrow">Desk set</p><h2>Build in twilight.</h2><p>The Orbit Veil desk mat and Blush Relay cable make a matched pair. The Twilight Desk Kit combines both for a fictional bundle price of $58.</p><button class="button" type="button" id="bundle-view" hidden>See the Twilight Desk Kit <span aria-hidden="true">↗</span></button></div>
+    </section>
+    <section class="policy" id="help"><div class="shell section policy-grid"><div><p class="eyebrow">Shop information</p><h2>Shipping &amp; returns.</h2></div><div>
+      <details><summary>Example shipping</summary><p>Try standard shipping for $6, free at $75, or express for $12. The examples model domestic delivery. No orders are sent.</p></details>
+      <details><summary>Example returns</summary><p>The fictional policy allows unopened accessories to be returned within 30 days. This sample checkout creates no shipment or return authorization.</p></details>
+      <details><summary>Will these keycaps fit my keyboard?</summary><p>Check switch stem, profile and layout in the product details. An ANSI kit and a single standard MX artisan have different fit requirements. Low-profile boards are outside this catalog’s keycap fit.</p></details>
+    </div></div></section>
+  </main>
+  <footer class="shell footer"><span>✦ Velvet Circuit Supply</span><span>Fictional portfolio project</span><a href="#main">Back to top ↑</a></footer>
+  <dialog id="product-dialog" aria-labelledby="product-title"><div id="detail"></div></dialog>
+  <dialog id="bag-dialog" aria-labelledby="bag-title"><div class="bag-panel">
+    <div class="dialog-head"><h2 id="bag-title" tabindex="-1">Your bag</h2><button class="close" type="button" data-close aria-label="Close bag">×</button></div>
+    <div id="bag-body"></div>
+    <p id="bag-status" class="sr-only" role="status"></p>
+  </div></dialog>
+</body>
+</html>
